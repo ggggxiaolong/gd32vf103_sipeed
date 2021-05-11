@@ -20,3 +20,10 @@
 - [ ]  电源管理
 - [ ]  Flash
 
+使用dfu模式或者串口下载需要配置 '/etc/udev/rules.d/70-ttyusb.rules' 文件
+
+```
+KERNEL=="ttyUSB[0-9]*", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="28e9", ATTRS{idProduct}=="0189", MODE="0666"
+SUBSYSTEM=="usb_device", ATTRS{idVendor}=="28e9", ATTRS{idProduct}=="0189", MODE="0666"
+```

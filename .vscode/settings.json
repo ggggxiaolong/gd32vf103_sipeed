@@ -1,9 +1,14 @@
 {
     "files.associations": {
+        "*.nvue": "vue",
         "bsp_systick.h": "c",
         "gd32vf103.h": "c",
         "system_gd32vf103.h": "c",
         "gd32vf103_libopt.h": "c",
-        "gd32vf103_eclic.h": "c"
+        "gd32vf103_eclic.h": "c",
+        "bsp_key.h": "c",
+        "gd32vf103_exmc.h": "c",
+        "bsp_eclic.h": "c",
+        "gd32vf103_exti.h": "c"
     }
 }
