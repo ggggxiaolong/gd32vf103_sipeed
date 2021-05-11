@@ -1,9 +1,12 @@
 /*
  * @Author: MrTan
  * @Date: 2021-05-11 10:25:21
- * @LastEditTime: 2021-05-11 14:46:34
+ * @LastEditTime: 2021-05-11 18:06:27
  * @LastEditors: Please set LastEditors
  * @Description: 龙眼开发板LED板级支持包
+ * 红色LED: PC13
+ * 绿色LED: PA1
+ * 蓝色LED: PA2
  * @FilePath: /gd32vf103/include/bsp_led.h
  */
 
