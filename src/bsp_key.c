@@ -1,8 +1,8 @@
 /*
  * @Author: MrTan
  * @Date: 2021-05-12 09:15:25
- * @LastEditTime: 2021-05-12 11:14:47
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-12 15:16:23
+ * @LastEditors: MrTan
  * @Description: 添加按键配置，和中断配置，及按键检测
  * @FilePath: /gd32_sipeed/src/bsp_key.c
  */
@@ -20,8 +20,6 @@ void bsp_key_init(void)
 
 void bsp_key_init_it(void)
 {
-    //全局中断使能
-    bsp_eclic_init();
     //使能key时钟
     rcu_periph_clock_enable(BSP_KEY_CLK);
     rcu_periph_clock_enable(RCU_AF);

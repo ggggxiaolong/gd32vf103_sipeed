@@ -10,6 +10,7 @@
         "gd32vf103_exmc.h": "c",
         "bsp_eclic.h": "c",
         "gd32vf103_exti.h": "c",
-        "bsp_led.h": "c"
+        "bsp_led.h": "c",
+        "bsp_usart.h": "c"
     }
 }
