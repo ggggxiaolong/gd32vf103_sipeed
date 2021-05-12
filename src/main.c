@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-11 14:45:23
- * @LastEditTime: 2021-05-11 16:13:41
+ * @LastEditTime: 2021-05-12 10:33:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /gd32vf103/home/mrtan/Documents/PlatformIO/Projects/gd32_sipeed/src/main.c
@@ -26,9 +26,10 @@ int main(void)
     }
 }
 
-void EXTI0_IRQHandler(void)
+void EXTI5_9_IRQHandler(void)
 {
-    if(RESET != exti_interrupt_flag_get(BSP_KEY_EXIT_LINE)){
+    if (RESET != exti_interrupt_flag_get(BSP_KEY_EXIT_LINE))
+    {
         exti_interrupt_flag_clear(BSP_KEY_EXIT_LINE);
         bsp_led_red_toogle();
     }
