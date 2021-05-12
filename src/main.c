@@ -1,7 +1,7 @@
 /*
  * @Author: MrTan
  * @Date: 2021-05-11 14:45:23
- * @LastEditTime: 2021-05-12 15:12:56
+ * @LastEditTime: 2021-05-12 17:49:26
  * @LastEditors: MrTan
  * @Description: 添加按键扫描
  * @FilePath: /gd32_sipeed/src/main.c
@@ -14,6 +14,7 @@
 #include "bsp_usart.h"
 #include <stdio.h>
 #include <string.h>
+#include "bsp_timer.h"
 
 int main(void)
 {
@@ -21,16 +22,12 @@ int main(void)
     bsp_eclic_init();
     //初始化板载led灯
     bsp_led_init();
-    bsp_usart_log_init();
-    printf("\n\r串口测试 USART TEST 0123456789 \n\r");
-    printf("输入r或R红灯切换 \n\r");
-    printf("输入g或G绿灯切换 \n\r");
-    printf("输入b或B蓝灯切换 \n\r");
-    bsp_led_green_on();
+    // 设置中断优先级
+    eclic_irq_enable(TIMER1_IRQn, 1, 0);
+    bsp_timer_init(TIMER1, 500);
+    // bsp_led_blue_on();
     while (1)
     {
-        delay_1ms(500);
-        bsp_led_green_toogle();
     }
 }
 
@@ -68,5 +65,13 @@ void USART0_IRQHandler()
         default:
             break;
         }
+    }
+}
+
+void TIMER1_IRQHandler(void)
+{
+    if(RESET != timer_interrupt_flag_get(TIMER1, TIMER_INT_FLAG_UP)){
+        bsp_led_green_toogle();
+        timer_interrupt_flag_clear(TIMER1, TIMER_INT_FLAG_UP);
     }
 }
