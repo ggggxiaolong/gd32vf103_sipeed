@@ -12,6 +12,7 @@
         "gd32vf103_exti.h": "c",
         "bsp_led.h": "c",
         "bsp_usart.h": "c",
-        "bsp_timer.h": "c"
+        "bsp_timer.h": "c",
+        "bsp_adc.h": "c"
     }
 }
