@@ -1,7 +1,7 @@
 /*
  * @Author: MrTan
  * @Date: 2021-05-12 09:15:25
- * @LastEditTime: 2021-05-12 10:37:46
+ * @LastEditTime: 2021-05-12 11:14:47
  * @LastEditors: Please set LastEditors
  * @Description: 添加按键配置，和中断配置，及按键检测
  * @FilePath: /gd32_sipeed/src/bsp_key.c
@@ -44,8 +44,8 @@ void bsp_key_init_it(void)
  */
 FlagStatus bsp_key_is_pressed(void)
 {
-    if(RESET != gpio_output_bit_get(BSP_KEY_PORT, BSP_KEY_PIN)){
-        while (RESET != gpio_output_bit_get(BSP_KEY_PORT, BSP_KEY_PIN));
+    if(RESET != gpio_input_bit_get(BSP_KEY_PORT, BSP_KEY_PIN)){
+        while (RESET != gpio_input_bit_get(BSP_KEY_PORT, BSP_KEY_PIN));
         return SET;
     }
     return RESET;

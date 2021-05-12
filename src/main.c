@@ -1,9 +1,9 @@
 /*
- * @Author: your name
+ * @Author: MrTan
  * @Date: 2021-05-11 14:45:23
- * @LastEditTime: 2021-05-12 10:33:22
+ * @LastEditTime: 2021-05-12 11:19:51
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 添加按键扫描
  * @FilePath: /gd32vf103/home/mrtan/Documents/PlatformIO/Projects/gd32_sipeed/src/main.c
  */
 
@@ -17,12 +17,13 @@ int main(void)
     //初始化板载led灯
     bsp_led_init();
     //初始化key
-    bsp_key_init_it();
+    bsp_key_init();
 
     while (1)
     {
-        delay_1ms(500);
-        bsp_led_blue_toogle();
+        if(RESET != bsp_key_is_pressed()){
+            bsp_led_green_toogle();
+        }
     }
 }
 
