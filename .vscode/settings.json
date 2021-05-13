@@ -13,6 +13,7 @@
         "bsp_led.h": "c",
         "bsp_usart.h": "c",
         "bsp_timer.h": "c",
-        "bsp_adc.h": "c"
+        "bsp_adc.h": "c",
+        "bsp_pwm.h": "c"
     }
 }

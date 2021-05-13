@@ -8,7 +8,7 @@
 
 #ifndef BSP_ADC_H
 #define BSP_ADC_H
-
+#include <stdint.h>
 /*! 
    \brief   adc初始化
    \param[in] gpio_periph: GPIOx(x = A,B,C,D,E)
